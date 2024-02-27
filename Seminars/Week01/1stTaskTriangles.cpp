@@ -58,7 +58,7 @@ namespace Figures {
 		return sqrt(halfPer * (halfPer - sideA) * (halfPer - sideB) * (halfPer - sideC));
 	}
 
-	void sortTrainglesByArea(Triangle* triangles, size_t N) {
+	void sortTrianglesByArea(Triangle* triangles, size_t N) {
 		
 		double* areas = new double[N];
 		for (size_t i = 0; i < N; i++){
@@ -108,7 +108,7 @@ int main()
 		Figures::readTriangle(trianglesArr[i]);
 	}
 
-	Figures::sortTrainglesByArea(trianglesArr, N);
+	Figures::sortTrianglesByArea(trianglesArr, N);
 
 	for (size_t i = 0; i < N; i++) {
 		Figures::printTriangle(trianglesArr[i]);
