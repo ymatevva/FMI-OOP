@@ -9,6 +9,7 @@ union Number {
 int main() {
 
 	Number number;
+	number.num = 12562356;
 	std::cout << "Original number: " << number.num << std::endl;
 	int result = 0;
 
