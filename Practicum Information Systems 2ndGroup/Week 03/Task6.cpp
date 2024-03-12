@@ -85,6 +85,8 @@ unsigned int countNewLines(const char* fileName) {
 		return 0;
 
 	std::ifstream ifs(fileName);
+	if(!ifs.is_open())
+		return;
 	return countSymbols(ifs, '\n') + 1;
 }
 
