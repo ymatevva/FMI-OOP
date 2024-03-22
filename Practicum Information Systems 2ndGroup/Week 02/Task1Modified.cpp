@@ -1,0 +1,150 @@
+#include<iostream>
+#include<fstream>
+
+enum class Month {
+
+	Undefined,
+	January,
+	February,
+	March,
+	April,
+	May,
+	June,
+	July,
+	August,
+	September,
+	October,
+	November,
+	December
+};
+
+
+struct Calendar {
+
+	Month month = Month::Undefined;
+	unsigned year = 0;
+};
+
+
+Calendar init(const Month& month, unsigned year) {
+
+	Calendar calendar{};
+
+	calendar.month = month;
+	calendar.year = year;
+
+	return calendar;
+}
+
+void readCalendarFromFile(std::ifstream& ifs, Calendar& calendar) {
+	ifs.read((char*)&calendar, sizeof(calendar));
+}
+void readArrFromFile(std::ifstream& ifs, Calendar*& calendar, size_t& arrSize) {
+
+	ifs.read((char*)&arrSize, sizeof(arrSize));
+	calendar = new Calendar[arrSize];
+	for (size_t i = 0; i < arrSize; i++){
+		readCalendarFromFile(ifs, calendar[i]);
+	}
+}
+void readFromFile(const char* fromFile,  Calendar*& calendar, size_t& arrSize) {
+	if (!fromFile)
+		return;
+
+	std::ifstream ifs(fromFile, std::ios::binary);
+	if (!ifs.is_open())
+		return;
+
+	readArrFromFile(ifs, calendar, arrSize);
+}
+
+void writeCalendarToFile(std::ofstream& ofs, const Calendar& calendar) {
+	ofs.write((const char*)&calendar, sizeof(calendar));
+}
+void writeArrToFile(std::ofstream& ofs, const Calendar* calendar, size_t arrSize) {
+	if (!calendar)
+		return;
+
+	ofs.write((const char*)&arrSize, sizeof(arrSize));
+	for (size_t i = 0; i < arrSize; i++){
+		writeCalendarToFile(ofs, calendar[i]);
+	}
+}
+void writeToFile(const char* toFile, const Calendar* calendar, size_t arrSize) {
+
+	if (!toFile || !calendar)
+		return;
+
+	std::ofstream ofs(toFile, std::ios::binary);
+	if (!ofs.is_open())
+		return;
+
+	writeArrToFile(ofs, calendar, arrSize);
+}
+
+void printMonth(const Month& month) {
+
+	switch (month) {
+
+	case Month::Undefined:
+		std::cout << "Undefined" << " "; break;
+	case Month::January:
+		std::cout << "January" << " "; break;
+	case Month::February:
+		std::cout << "February" << " "; break;
+	case Month::March:
+		std::cout << "March" << " " ; break;
+	case Month::April:
+		std::cout << "April" << " "; break;
+	case Month::May:
+		std::cout << "May" << " "; break;
+	case Month::June:
+		std::cout << "June" << " "; break;
+	case Month::July:
+		std::cout << "July" << " "; break;
+	case Month::August:
+		std::cout << "August" << " "; break;
+	case Month::September:
+		std::cout << "september" << " "; break;
+	case Month::October:
+		std::cout << "October" << " "; break;
+	case Month::November:
+		std::cout << "November" << " "; break;
+	case Month::December:
+		std::cout << "December" << " "; break;
+
+	}
+
+}
+
+void printCalendar(const Calendar& calendar) {
+	printMonth(calendar.month);
+	std::cout << calendar.year << std::endl;
+
+}
+void printArr(const Calendar* calendar, size_t arrSize) {
+
+	if (!calendar)
+		return;
+	for (size_t i = 0; i < arrSize; i++){
+		printCalendar(calendar[i]);
+	}
+}
+int main() {
+
+	Calendar calendar[3];
+
+	calendar[0] = init(Month::May, 1974);
+	calendar[1] = init(Month::January, 2004);
+	calendar[2] = init(Month::August, 2003);
+
+	writeToFile("CALENDAR.dat", calendar, 3);
+
+	size_t sizeArr = 0;
+	Calendar* newCalendar = new Calendar[sizeArr];
+	readFromFile("CALENDAR.dat", newCalendar, sizeArr);
+	printArr(newCalendar, sizeArr);
+
+	delete[] newCalendar;
+	return 0;
+}
