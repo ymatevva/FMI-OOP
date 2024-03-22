@@ -167,13 +167,9 @@ void printNextMonth(Calendar& calendar) {
 	else
 		newCalendar.currMonth = (Month)((int)calendar.currMonth + 1);
 
-	if (calendar.year == 0){
-		std::cout << "There isn't previous year\n";
-	}
-
-	else{
-		newCalendar.year = calendar.year + 1;
-	}
+	
+	newCalendar.year = calendar.year + 1;
+	
 
 	printCalendar(newCalendar);
 }
