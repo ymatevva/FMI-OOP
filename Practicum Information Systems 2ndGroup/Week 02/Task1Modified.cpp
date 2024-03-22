@@ -130,6 +130,29 @@ void printArr(const Calendar* calendar, size_t arrSize) {
 		printCalendar(calendar[i]);
 	}
 }
+void getPrevMonth(Calendar& calendar) {
+
+	if (calendar.month == Month::January)
+		calendar.month = Month::December;
+	else
+		calendar.month = (Month)((int)calendar.month - 1);
+
+	if (calendar.year == 0)
+		std::cout << "There is no previous year." << std::endl;
+	else
+		calendar.year = calendar.year - 1;
+}
+
+void getNextMonth(Calendar& calendar) {
+
+	if (calendar.month == Month::December)
+		calendar.month = Month::January;
+	else
+		calendar.month = (Month)((int)calendar.month + 1);
+
+
+	calendar.year = calendar.year + 1;
+
 int main() {
 
 	Calendar calendar[3];
@@ -145,6 +168,11 @@ int main() {
 	readFromFile("CALENDAR.dat", newCalendar, sizeArr);
 	printArr(newCalendar, sizeArr);
 
+	
+	getPrevMonth(newCalendar[1]);
+	printArr(newCalendar, sizeArr);
+
+	
 	delete[] newCalendar;
 	return 0;
 }
