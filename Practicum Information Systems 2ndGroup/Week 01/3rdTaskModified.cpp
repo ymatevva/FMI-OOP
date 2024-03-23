@@ -23,7 +23,7 @@ enum class Currency {
 
 struct BankAccount {
 
-	char* accountNumber = 0;//let's say that the number contains not only digits//8 bytes
+	char* accountNumber = nullptr;//let's say that the number contains not only digits//8 bytes
 	double balance = 0;
 	Currency currency = Currency::Undefined;
 	TypeBankAccount typeBankAcc = TypeBankAccount::Undefined;
