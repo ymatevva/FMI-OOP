@@ -36,16 +36,23 @@ Calendar init(const Month& month, unsigned year) {
 	return calendar;
 }
 
-void readCalendarFromFile(std::ifstream& ifs, Calendar& calendar) {
-	ifs.read((char*)&calendar, sizeof(calendar));
+
+size_t getFileSize(std::ifstream& ifs) {
+
+	unsigned currPos = ifs.tellg();
+	ifs.seekg(0, std::ios::end);
+
+	size_t fileSize = ifs.tellg();
+	ifs.seekg(currPos);
+
+	return fileSize;
 }
+
 void readArrFromFile(std::ifstream& ifs, Calendar*& calendar, size_t& arrSize) {
 
-	ifs.read((char*)&arrSize, sizeof(arrSize));
+	arrSize = getFileSize(ifs)/sizeof(Calendar);	
 	calendar = new Calendar[arrSize];
-	for (size_t i = 0; i < arrSize; i++){
-		readCalendarFromFile(ifs, calendar[i]);
-	}
+	ifs.read((char*)calendar, sizeof(Calendar)*arrSize);
 }
 void readFromFile(const char* fromFile,  Calendar*& calendar, size_t& arrSize) {
 	if (!fromFile)
