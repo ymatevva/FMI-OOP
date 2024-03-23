@@ -58,7 +58,7 @@ void readBankAccFromFile(std::ifstream& ifs, BankAccount& bankAcc) {
 	ifs.read((char*)&bankAcc.currency, sizeof(bankAcc.currency));
 	ifs.read((char*)&bankAcc.typeBankAcc, sizeof(bankAcc.typeBankAcc));
 }
-void readBankAccFromFile(std::ifstream& ifs, BankAccount*& bankAccArr, size_t& sizeArr) {
+void readBankAccArrFromFile(std::ifstream& ifs, BankAccount*& bankAccArr, size_t& sizeArr) {
 
 	ifs.read((char*)&sizeArr, sizeof(sizeArr));
 	bankAccArr = new BankAccount[sizeArr];
@@ -76,7 +76,7 @@ void readFromFile(const char* fromFile, BankAccount*& bankAccArr, size_t& sizeAr
 	if (!ifs.is_open())
 		return;
 
-	readBankAccFromFile(ifs, bankAccArr, sizeArr);
+	readBankAccArrFromFile(ifs, bankAccArr, sizeArr);
 }
 
 void writeBankAccToFile(std::ofstream& ofs, const BankAccount& bankAccount) {
