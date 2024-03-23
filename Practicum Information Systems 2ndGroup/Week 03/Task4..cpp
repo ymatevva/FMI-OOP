@@ -27,10 +27,13 @@ void transformSentence(char* str, bool toCaps) {
 
 	while (*str) {
 
-		if (toCaps && HelperFunctions::isLower(*str))
-			*str = HelperFunctions::toUpper(*str);
+		if (toCaps)
+		{
+			if(HelperFunctions::isLower(*str))
+			*str = HelperFunctions::toUpper(*str);}
 
-		 if(!toCaps && HelperFunctions::isUpper(*str))
+		else 
+			if(HelperFunctions::isUpper(*str))
 			*str = HelperFunctions::toLower(*str);
 
 		str++;
