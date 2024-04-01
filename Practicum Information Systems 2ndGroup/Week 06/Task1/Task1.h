@@ -1,6 +1,6 @@
 #pragma once
 
-namespace HelperFunctions {
+namespace Constants {
 	constexpr int ABBREVIATION_SIZE = 4;
 	constexpr int NAME_SIZE = 19;
 	constexpr int MONTHS = 12;
@@ -9,9 +9,9 @@ namespace HelperFunctions {
 
 class Stock {
 
-	char _abbreviation[HelperFunctions::ABBREVIATION_SIZE + 1] = " ";
-	char _name[HelperFunctions::NAME_SIZE + 1] = " ";
-	double _stockPrice[HelperFunctions::MONTHS]{ 0 };
+	char _abbreviation[Constants::ABBREVIATION_SIZE + 1] = " ";
+	char _name[Constants::NAME_SIZE + 1] = " ";
+	double _stockPrice[Constants::MONTHS]{ 0 };
 
 	void copyFrom(const Stock& other);
 
