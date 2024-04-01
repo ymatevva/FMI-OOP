@@ -2,7 +2,7 @@
 #include"Task1.h"
 
 #pragma warning(disable:4996)
-using namespace HelperFunctions;
+using namespace Constants;
 
 
 void Stock::copyFrom(const Stock& other) {
