@@ -6,12 +6,11 @@ constexpr int FEST_NAME = 30;
 class Festival
 {
 private:
-
-    char festivalName[FEST_NAME + 1];
+    char festivalName[FEST_NAME + 1] = "undefined";
     Projection projections[MAX_PROJECTIONS];
-    unsigned numProjections;
-
+    unsigned numProjections = 0;
 public:
+    Festival() = default;
     Festival(const char* festivalName);
 
     void setFestivalName(const char* festivalName);
