@@ -14,7 +14,8 @@ public:
     void pop();
     const T& peek() const;
 
-    bool isEmpty();
+    bool isEmpty() const;
+    bool isFull() const;
 };
 
 
@@ -45,10 +46,14 @@ void MyStack<T, S>::pop() {
 }
 
 template<typename T, const unsigned S>
-bool MyStack<T, S> ::isEmpty() {
+bool MyStack<T, S> ::isEmpty() const{
     return size == 0;
 }
 
+template<typename T, const unsigned S>
+bool MyStack<T, S> ::isFull() const{
+    return size == S;
+}
 template<typename T, const unsigned S>
 const T& MyStack<T, S>::peek() const {
     if (isEmpty()) {
