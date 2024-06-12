@@ -24,14 +24,14 @@ UniquePtr<T>::UniquePtr(T* ptr)
 }
 
 template<typename T>
-UniquePtr<T>::UniquePtr(UniquePtr&& other) noexcept
+UniquePtr<T>::UniquePtr(UniquePtr<T>&& other) noexcept
 {
 	ptr = other.ptr;
 	other.ptr = nullptr;
 }
 
 template<typename T>
-UniquePtr<T>& UniquePtr<T>::operator=(UniquePtr&& other) noexcept
+UniquePtr<T>& UniquePtr<T>::operator=(UniquePtr<T>&& other) noexcept
 {
 	if (this != &other) {
 		delete ptr;
