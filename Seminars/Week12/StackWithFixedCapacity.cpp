@@ -4,7 +4,7 @@
 template<typename T, const unsigned S>
 class MyStack {
 
-    T data[S];
+    T *data[S];
     size_t size = 0;
 
 public:
