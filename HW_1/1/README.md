@@ -1,4 +1,4 @@
-# HW1 - Multiset
+# HW1 - MultiSet
 
 This task implements a memory-efficient MultiSet data structure that stores numbers in a range `[0, n]`. The MultiSet is optimized for memory by using a fixed number of bits to store the count of each number.
 
