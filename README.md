@@ -45,4 +45,5 @@ Examples from seminars can be found here:
 - [Week 10](./Seminars/Week_10)
 - [Week_11](./Seminars/Week_11)
 ---
- 
+
+ Seminar examples are from - [OOP course](https://github.com/Angeld55/Object-oriented_programming_FMI).
