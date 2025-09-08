@@ -1,6 +1,6 @@
 # 📚 Object-Oriented Programming course
 
-This repository contains materials, homeworks, practicum exercises, and seminars for the course **Object-Oriented Programming".
+This repository contains materials, homeworks, practicum exercises, and seminars for the course **Object-Oriented Programming"**.
 ---
 
 ## 🔗 Homeworks
