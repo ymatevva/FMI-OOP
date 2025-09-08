@@ -1,6 +1,6 @@
 # 📚 Object-Oriented Programming course
 
-This repository contains materials, homeworks, practicum exercises, and seminars for the course **Object-Oriented Programming"**.
+This repository contains materials, homeworks, practicum exercises, and seminar examples for the course **"Object-Oriented Programming"**.
 ---
 
 ## 🔗 Homeworks
@@ -11,16 +11,12 @@ This repository contains materials, homeworks, practicum exercises, and seminars
 
 ## 🛠 Practicum - Group 1
 
-Exercises and tasks organized by week:
-
 - [Week 01](./Practicum_1/Week_01)  
 - [Week 02](./Practicum_1/Week_02)  
 - [Week 04](./Practicum_1/Week_04)  
 
 
 ## 🛠 Practicum - Group 2
-
-Exercises and tasks organized by week:
 
 - [Week 01](./Practicum_2/Week_01)  
 - [Week 02](./Practicum_2/Week_02)  
@@ -35,8 +31,18 @@ Exercises and tasks organized by week:
 ---
 
 ## 🎓 Seminars
-Additional materials and seminar notes can be found here:  
-- [Seminars](./Seminars)
+Examples from seminars can be found here:  
 
+- [Week 01](./Seminars/Week_01)  
+- [Week 02](./Seminars/Week_02)  
+- [Week 03](./Seminars/Week_03)  
+- [Week 04](./Seminars/Week_04)  
+- [Week 05](./Seminars/Week_05)  
+- [Week 06](./Seminars/Week_06)  
+- [Week 07](./Seminars/Week_07)  
+- [Week 08](./Seminars/Week_08)  
+- [Week 09](./Seminars/Week_09)  
+- [Week 10](./Seminars/Week_10)
+- [Week_11](./Seminars/Week_11)
 ---
  
